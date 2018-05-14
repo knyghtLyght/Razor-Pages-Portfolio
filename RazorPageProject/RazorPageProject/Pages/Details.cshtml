@@ -1,0 +1,8 @@
+﻿@page "{id}"
+@{
+    Layout = "_Layout";
+    var id = int.Parse((string)RouteData.Values["id"]);
+    var student = await StudentService.FindAsync(id);
+}
+
+<h2></h2>

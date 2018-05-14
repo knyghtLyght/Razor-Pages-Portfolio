@@ -9,9 +9,27 @@
 }
 <div>
     <div>
-        @foreach (var student in students)
-        {
-            <p></p>
-        }
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> @Html.DisplayNameFor(model => students[0].FirstName)</th>
+                    <th> @Html.DisplayNameFor(model => students[0].LastName)</th>
+                    <th>@Html.DisplayNameFor(model => students[0].Course)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in students)
+                {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => student.FirstName)</td>
+                    <td>@Html.DisplayFor(modelItem => student.LastName)</td>
+                    <td>@Html.DisplayFor(modelItem => student.Course)</td>
+                    <td>
+                        <a asp-page="/Detail" asp-route-id="@student.ID">Detail</a> |
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>
