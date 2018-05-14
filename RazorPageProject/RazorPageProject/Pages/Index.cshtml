@@ -1,0 +1,17 @@
+﻿@page
+@using RazorPageProject.Models
+
+@inject IStudentServices StudentService
+
+@{ 
+    Layout = "_Layout";
+    var students = await StudentService.GetAllAsync();
+}
+<div>
+    <div>
+        @foreach (var student in students)
+        {
+            <p></p>
+        }
+    </div>
+</div>
