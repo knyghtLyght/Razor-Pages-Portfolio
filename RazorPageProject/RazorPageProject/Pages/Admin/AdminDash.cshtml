@@ -1,0 +1,30 @@
+﻿@page
+@using RazorPageProject.Models;
+@model AdminDashModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "AdminDash";
+}
+
+<h2>Admin console</h2>
+
+<form method="post">
+    <label asp-for="student.FirstName"></label>
+    <input asp-for="student.FirstName" />
+
+    <label asp-for="student.LastName"></label>
+    <input asp-for="student.LastName" />
+
+    <select asp-for="student.Course" asp-items="Html.GetEnumSelectList(typeof(Courses))">
+        <option selected="selected" value="">Please select</option>
+    </select>
+
+    <label asp-for="student.Email"></label>
+    <input asp-for="student.Email" />
+
+    <label asp-for="student.GPA"></label>
+    <input asp-for="student.GPA" />
+
+    <button type="submit">Save</button>
+    <button type="submit" asp-page-handler="Delete">Delete</button>
+</form>
